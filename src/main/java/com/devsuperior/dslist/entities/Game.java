@@ -21,11 +21,16 @@ public class Game {
 
     @Column(name="game_year")
     private Integer year;
-    private String gener;
-    private String plataform;
+    private String genre;
+    private String platforms;
     private double score;
     private String imgUrl;
+
+
+    @Column(columnDefinition="TEXT")
     private String shortDescription;
+    
+    @Column(columnDefinition="TEXT")
     private String longDescription;
 
     public Game(){
@@ -33,13 +38,13 @@ public class Game {
 
         //Construtores dos atributos
 
-    public Game(long id, String title, Integer year, String gener, String plataform, double score, String imgUrl,
+    public Game(long id, String title, Integer year, String genre, String platforms, double score, String imgUrl,
             String shortDescription, String longDescription) {
         this.id = id;
         this.title = title;
         this.year = year;
-        this.gener = gener;
-        this.plataform = plataform;
+        this.genre = genre;
+        this.platforms = platforms;
         this.score = score;
         this.imgUrl = imgUrl;
         this.shortDescription = shortDescription;
@@ -73,19 +78,19 @@ public class Game {
     }
 
     public String getGener() {
-        return gener;
+        return genre;
     }
 
-    public void setGener(String gener) {
-        this.gener = gener;
+    public void setGener(String genre) {
+        this.genre = genre;
     }
 
     public String getPlataform() {
-        return plataform;
+        return platforms;
     }
 
-    public void setPlataform(String plataform) {
-        this.plataform = plataform;
+    public void setPlataform(String platforms) {
+        this.platforms = platforms;
     }
 
     public double getScore() {
@@ -139,9 +144,7 @@ public class Game {
         if (getClass() != obj.getClass())
             return false;
         Game other = (Game) obj;
-        if (id != other.id)
-            return false;
-        return true;
+        return id == other.id;
     }
 
     
