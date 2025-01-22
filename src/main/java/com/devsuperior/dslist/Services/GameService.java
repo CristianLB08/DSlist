@@ -15,8 +15,9 @@ public class GameService {
     private GameRepository gameRepository;
 
     public List<Game> findAll(){
-        List<Game> result = gameRepository.findAll();
-        return result;
-    
+        gameRepository.findAll();
+            List<Game> result = gameRepository.findAll();
+            return result;
     }
 }
+
