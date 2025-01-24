@@ -7,7 +7,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Embeddable
-public class BelongingPK {
+public class BelongingPk {
 
 	@ManyToOne
     @JoinColumn(name = "game_id")
@@ -46,7 +46,7 @@ public class BelongingPK {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		BelongingPK other = (BelongingPK) obj;
+		BelongingPk other = (BelongingPk) obj;
 		return Objects.equals(game, other.game) && Objects.equals(list, other.list);
 	}
 }
